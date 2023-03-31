@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SingleBlog from "../SignleBlog/SingleBlog";
-// import Cart2 from "../Cart/Cart2";
-// import Cart from "../Cart/Cart";
 import "./Blog.css";
+import Sidebar1 from "../Sidebar/Sidebar1";
+import Sidebar2 from "../Sidebar/SIdebar2";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -25,8 +25,8 @@ const Blog = () => {
       </div>
       <div className="sidebar-container">
         <div className="sidebar">
-          {/* <Cart watchTime={watchTime}></Cart>
-          <Cart2 cartMin={cartMin}></Cart2> */}
+          <Sidebar1></Sidebar1>
+          <Sidebar2></Sidebar2>
         </div>
       </div>
     </div>
