@@ -1,0 +1,56 @@
+nav {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: #1c2b35;
+}
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  margin-left: 30px;
+  transition: 0.5s;
+}
+nav a:hover {
+  color: orange;
+}
+
+.img {
+  height: 40px;
+  width: 40px;
+}
+
+@media screen and (max-width: 576px) {
+  nav {
+    position: absolute;
+  }
+  .header {
+    height: 120px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    margin-left: 0px;
+    margin: 0px 10px;
+  }
+
+  .container,
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    --bs-gutter-x: 0rem;
+  }
+}

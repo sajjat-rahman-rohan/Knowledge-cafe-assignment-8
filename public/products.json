@@ -1,0 +1,46 @@
+[
+  {
+    "id": "124e13b9-2d54-4b2f-a74d-a77b362d6ead",
+    "authorName": "Mr. Raju",
+    "authorImage": "../src/images/Ellipse 1 (1).png",
+    "publishDate": "Mar 14 (4 Days ago)",
+    "readTime": 14,
+    "img": "../src/images/Rectangle 1.png",
+    "blogTitle": "How to get your first job as a self-taught programmer",
+    "quantity": 0,
+    "price": 100
+  },
+  {
+    "id": "13cbc7ed-a61b-4883-9d42-82d7d8642b86",
+    "authorName": "Mrs. Setara",
+    "authorImage": "../src/images/Ellipse 1 (2).png",
+    "publishDate": "Mar 14 (4 Days ago)",
+    "readTime": 12,
+    "img": "../src/images/Rectangle 1 (1).png",
+    "blogTitle": "Master Microsoft Power Platform and Become an In-Demand!",
+    "quantity": 0,
+    "price": 200
+  },
+  {
+    "id": "307f166f-1d04-4573-bc37-2f461ea9d4f7",
+    "authorName": "Mina Mostofa",
+    "authorImage": "../src/images/Ellipse 1 (3).png",
+    "publishDate": "Mar 14 (4 Days ago)",
+    "readTime": 18,
+    "img": "../src/images/Rectangle 1 (2).png",
+    "blogTitle": "Ray Wenderlich | Tutorials for iPhone & iOS Developers and Gamers",
+    "quantity": 0,
+    "price": 300
+  },
+  {
+    "id": "4bf9798f-63bc-4a83-b0c6-6a3b816fe922",
+    "authorName": "Mahiya Mahi",
+    "authorImage": "../src/images/Ellipse 1.png",
+    "publishDate": "Mar 14 (4 Days ago)",
+    "readTime": 11,
+    "img": "../src/images/Rectangle 1.png",
+    "blogTitle": "Brand Naming of Critical & Creative Thinking Program",
+    "quantity": 0,
+    "price": 400
+  }
+]
