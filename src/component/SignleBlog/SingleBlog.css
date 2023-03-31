@@ -1,0 +1,94 @@
+.blog img {
+  height: 450px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+.single-blog-info .img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.single-blog {
+  display: grid;
+  grid-template-columns: 3fr 0.5fr;
+}
+
+.author-name {
+  margin: 0;
+  font-family: "Exo 2", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 160%;
+  color: #111111;
+}
+.single-blog-info {
+  margin-left: 10px;
+}
+.single-blog-info p {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 160%;
+  color: rgba(17, 17, 17, 0.6);
+}
+.single-blog-title {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  color: #111111;
+}
+.blog-min {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.blog-btn {
+  background: transparent;
+  padding: 0;
+  transition: 0.2s;
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: #6047ec;
+}
+.blog-btn:hover {
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .blog img {
+    height: auto;
+  }
+  .single-blog {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .author-name {
+    font-size: 20px;
+  }
+  .single-blog-title {
+    font-size: 30px;
+  }
+  .blog-min {
+    font-size: 16px;
+  }
+  .single-blog-info p {
+    font-size: 14px;
+  }
+  .blog-btn {
+    font-size: 18px;
+  }
+  .single-blog-info {
+    margin-left: 0px;
+  }
+}
