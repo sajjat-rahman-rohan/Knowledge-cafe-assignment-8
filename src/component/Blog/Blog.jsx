@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { addToDb, getBlogQuantity } from "../../utilities/fakedb";
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SingleBlog from "../SignleBlog/SingleBlog";
 import Sidebar1 from "../Sidebar/Sidebar1";
@@ -45,7 +45,7 @@ const Blog = () => {
       blog.quantity = 1;
       newBlogQuantity = [...blogsQuantity, blog];
     } else {
-      // toast("Already Token! Wow so easy!");
+      toast("Already bookmarked this blog!");
       exists.quantity = exists.quantity + 1;
       const remaining = blogsQuantity.filter((pdMin) => pdMin.id !== blog.id);
       newBlogQuantity = [...remaining, exists];
