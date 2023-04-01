@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
 
-const Sidebar2 = ({ cartMin }) => {
+const Sidebar2 = ({ blogsQuantity }) => {
   let quantity = 0;
+
+  for (const bookmarkBlog of blogsQuantity) {
+    quantity = quantity + bookmarkBlog.quantity;
+  }
 
   return (
     <div className="sidebar1 sidebar2">

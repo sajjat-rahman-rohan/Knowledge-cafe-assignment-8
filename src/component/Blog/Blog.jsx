@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-// import { addToDbMin, getShoppingCartMin } from "../../utilities/fakedb2";
-import { ToastContainer, toast } from "react-toastify";
+import { addToDb, getBlogQuantity } from "../../utilities/fakedb";
+// import { ToastContainer, toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SingleBlog from "../SignleBlog/SingleBlog";
 import Sidebar1 from "../Sidebar/Sidebar1";
@@ -9,6 +9,7 @@ import "./Blog.css";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
+  const [blogsQuantity, setBlogsQuantity] = useState([]);
   const [spentTime, setSpentTime] = useState("");
 
   useEffect(() => {
@@ -16,6 +17,42 @@ const Blog = () => {
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
+
+  useEffect(() => {
+    const storedBlogQuantity = getBlogQuantity();
+    const saveBlogQuantity = [];
+
+    for (const id in storedBlogQuantity) {
+      const addedBlogQuantity = blogs.find((blog) => blog.id === id);
+
+      if (addedBlogQuantity) {
+        const quantity = storedBlogQuantity[id];
+
+        addedBlogQuantity.quantity = quantity;
+
+        saveBlogQuantity.push(addedBlogQuantity);
+      }
+    }
+    // step 5: set the cart
+    setBlogsQuantity(saveBlogQuantity);
+  }, [blogs]);
+
+  const handleAddToBlogQuantity = (blog) => {
+    let newBlogQuantity = [];
+
+    const exists = blogsQuantity.find((pdMin) => pdMin.id === blog.id);
+    if (!exists) {
+      blog.quantity = 1;
+      newBlogQuantity = [...blogsQuantity, blog];
+    } else {
+      // toast("Already Token! Wow so easy!");
+      exists.quantity = exists.quantity + 1;
+      const remaining = blogsQuantity.filter((pdMin) => pdMin.id !== blog.id);
+      newBlogQuantity = [...remaining, exists];
+    }
+    setBlogsQuantity(newBlogQuantity);
+    addToDb(blog.id);
+  };
 
   const handleAddToSpentTime = (time) => {
     const previousSpentTime = JSON.parse(localStorage.getItem("spentTime"));
@@ -38,13 +75,14 @@ const Blog = () => {
             key={blog.id}
             blog={blog}
             handleAddToSpentTime={handleAddToSpentTime}
+            handleAddToBlogQuantity={handleAddToBlogQuantity}
           ></SingleBlog>
         ))}
       </div>
       <div className="sidebar-container">
         <div className="sidebar">
           <Sidebar1 spentTime={spentTime}></Sidebar1>
-          <Sidebar2></Sidebar2>
+          <Sidebar2 blogsQuantity={blogsQuantity}></Sidebar2>
         </div>
       </div>
     </div>

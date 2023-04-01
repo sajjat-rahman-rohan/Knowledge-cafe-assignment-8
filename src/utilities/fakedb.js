@@ -1,38 +1,38 @@
 // use local storage to manage cart data
 const addToDb = (id) => {
-  let shoppingCart = getShoppingCart();
+  let blogQuantity = getBlogQuantity();
   // add quantity
-  const quantity = shoppingCart[id];
+  const quantity = blogQuantity[id];
   if (!quantity) {
-    shoppingCart[id] = 1;
+    blogQuantity[id] = 1;
   } else {
     const newQuantity = quantity + 1;
-    shoppingCart[id] = newQuantity;
+    blogQuantity[id] = newQuantity;
   }
-  localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+  localStorage.setItem("blog-quantity", JSON.stringify(blogQuantity));
 };
 
 const removeFromDb = (id) => {
-  const shoppingCart = getShoppingCart();
-  if (id in shoppingCart) {
-    delete shoppingCart[id];
-    localStorage.setItem("shopping-cart", JSON.stringify(shoppingCart));
+  const blogQuantity = getBlogQuantity();
+  if (id in blogQuantity) {
+    delete blogQuantity[id];
+    localStorage.setItem("blog-quantity", JSON.stringify(blogQuantity));
   }
 };
 
-const getShoppingCart = () => {
-  let shoppingCart = {};
+const getBlogQuantity = () => {
+  let blogQuantity = {};
 
-  //get the shopping cart from local storage
-  const storedCart = localStorage.getItem("shopping-cart");
-  if (storedCart) {
-    shoppingCart = JSON.parse(storedCart);
+  //get the blog Quantity from local storage
+  const storedQuantity = localStorage.getItem("blog-quantity");
+  if (storedQuantity) {
+    blogQuantity = JSON.parse(storedQuantity);
   }
-  return shoppingCart;
+  return blogQuantity;
 };
 
 const deleteShoppingCart = () => {
-  localStorage.removeItem("shopping-cart");
+  localStorage.removeItem("blog-quantity");
 };
 
-export { addToDb, removeFromDb, getShoppingCart, deleteShoppingCart };
+export { addToDb, removeFromDb, getBlogQuantity, deleteShoppingCart };

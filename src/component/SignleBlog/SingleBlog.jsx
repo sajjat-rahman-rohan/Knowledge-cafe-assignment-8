@@ -15,7 +15,7 @@ const SingleBlog = (props) => {
   } = props.blog;
 
   const handleAddToSpentTime = props.handleAddToSpentTime;
-  const handleAddTocartMin = props.handleAddTocartMin;
+  const handleAddToBlogQuantity = props.handleAddToBlogQuantity;
 
   return (
     <div className="blog">
@@ -45,7 +45,7 @@ const SingleBlog = (props) => {
         </div>
         <span className="blog-min">
           {readTime} min read{" "}
-          <span onClick={() => handleAddTocartMin(props.blog)}>
+          <span onClick={() => handleAddToBlogQuantity(props.blog)}>
             <FontAwesomeIcon icon={faBookmark} />
           </span>
         </span>
