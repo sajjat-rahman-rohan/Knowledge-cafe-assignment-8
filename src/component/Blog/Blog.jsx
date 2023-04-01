@@ -14,7 +14,7 @@ const Blog = () => {
   const [marked, setMarked] = useState([]);
 
   useEffect(() => {
-    fetch("../../../public/products.json")
+    fetch("../../../public/blogs.json")
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
@@ -51,14 +51,14 @@ const Blog = () => {
 
     // Marked Blog Quantity state
     let newBlogQuantity = [];
-    const exists = blogsQuantity.find((pdMin) => pdMin.id === blog.id);
+    const exists = blogsQuantity.find((blogQ) => blogQ.id === blog.id);
     if (!exists) {
       blog.quantity = 1;
       newBlogQuantity = [...blogsQuantity, blog];
     } else {
       // toast("Already bookmarked this blog!");
       exists.quantity = exists.quantity + 1;
-      const remaining = blogsQuantity.filter((pdMin) => pdMin.id !== blog.id);
+      const remaining = blogsQuantity.filter((blogQ) => blogQ.id !== blog.id);
       newBlogQuantity = [...remaining, exists];
     }
 

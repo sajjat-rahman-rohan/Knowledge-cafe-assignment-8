@@ -1,22 +1,24 @@
-nav {
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  background-color: #1c2b35;
-}
-
 .header {
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
+}
+.title {
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  color: #111111;
 }
 
 nav a {
   text-decoration: none;
-  color: #fff;
+  font-family: "Exo 2";
+  font-style: normal;
+  font-weight: 500;
+  color: #111111;
   margin-left: 30px;
   transition: 0.5s;
 }
@@ -30,13 +32,15 @@ nav a:hover {
 }
 
 @media screen and (max-width: 576px) {
-  nav {
-    position: absolute;
-  }
   .header {
-    height: 120px;
+    height: auto;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 30px;
   }
 
   nav a {

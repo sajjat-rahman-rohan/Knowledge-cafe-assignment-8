@@ -1,12 +1,12 @@
 import React from "react";
 import "./Header.css";
-import logo from "../../images/Ellipse 1.png";
+import logo from "../../images/ellipse-1.png";
 
 const Header = () => {
   return (
     <nav>
       <div className="container header">
-        <h2 className="text-light">Knowledge Cafe</h2>
+        <h2 className=" title m-0">Knowledge Cafe</h2>
         <div>
           <a href="/order">Read Review</a>
           <a href="/inventory">Blog</a>
@@ -16,6 +16,7 @@ const Header = () => {
           </a>
         </div>
       </div>
+      <hr />
     </nav>
   );
 };
