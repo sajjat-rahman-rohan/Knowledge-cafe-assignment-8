@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Sidebar.css";
+import BlogTitle from "../BlogTitle/BlogTitle";
 
-const Sidebar2 = ({ blogsQuantity }) => {
+const Sidebar2 = ({ blogsQuantity, marked }) => {
   let quantity = 0;
 
   for (const bookmarkBlog of blogsQuantity) {
@@ -14,7 +15,14 @@ const Sidebar2 = ({ blogsQuantity }) => {
         <h5 className="bookmark-title">
           <b>Bookmarked Blogs : {quantity}</b>
         </h5>
-        <h5 className="bookmark-blog"></h5>
+        <div>
+          {marked.map((markedTitle) => (
+            <BlogTitle
+              key={markedTitle.id}
+              markedTitle={markedTitle}
+            ></BlogTitle>
+          ))}
+        </div>
       </div>
     </div>
   );

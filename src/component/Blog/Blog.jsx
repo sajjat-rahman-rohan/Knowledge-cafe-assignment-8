@@ -11,6 +11,7 @@ const Blog = () => {
   const [blogs, setBlogs] = useState([]);
   const [blogsQuantity, setBlogsQuantity] = useState([]);
   const [spentTime, setSpentTime] = useState("");
+  const [marked, setMarked] = useState([]);
 
   useEffect(() => {
     fetch("../../../public/products.json")
@@ -27,29 +28,40 @@ const Blog = () => {
 
       if (addedBlogQuantity) {
         const quantity = storedBlogQuantity[id];
-
         addedBlogQuantity.quantity = quantity;
-
         saveBlogQuantity.push(addedBlogQuantity);
       }
     }
-    // step 5: set the cart
     setBlogsQuantity(saveBlogQuantity);
   }, [blogs]);
 
   const handleAddToBlogQuantity = (blog) => {
-    let newBlogQuantity = [];
+    // Marked Blog state
+    const newSet = [...marked, blog];
+    setMarked(newSet);
 
+    const exist = marked.find((blg) => blg.id === blog.id);
+    if (!exist) {
+      const newSavedBookmark = [...marked, blog];
+      setMarked(newSavedBookmark);
+      toast.success("Bookmark Success!");
+    } else {
+      toast.error("You Have Already Bookmarked This Blog!");
+    }
+
+    // Marked Blog Quantity state
+    let newBlogQuantity = [];
     const exists = blogsQuantity.find((pdMin) => pdMin.id === blog.id);
     if (!exists) {
       blog.quantity = 1;
       newBlogQuantity = [...blogsQuantity, blog];
     } else {
-      toast("Already bookmarked this blog!");
+      // toast("Already bookmarked this blog!");
       exists.quantity = exists.quantity + 1;
       const remaining = blogsQuantity.filter((pdMin) => pdMin.id !== blog.id);
       newBlogQuantity = [...remaining, exists];
     }
+
     setBlogsQuantity(newBlogQuantity);
     addToDb(blog.id);
   };
@@ -82,7 +94,7 @@ const Blog = () => {
       <div className="sidebar-container">
         <div className="sidebar">
           <Sidebar1 spentTime={spentTime}></Sidebar1>
-          <Sidebar2 blogsQuantity={blogsQuantity}></Sidebar2>
+          <Sidebar2 blogsQuantity={blogsQuantity} marked={marked}></Sidebar2>
         </div>
       </div>
     </div>
