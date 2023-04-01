@@ -5,7 +5,7 @@ const Sidebar2 = ({ cartMin }) => {
   let quantity = 0;
 
   return (
-    <div className="cart cartTow">
+    <div className="sidebar1 sidebar2">
       <div className="bookmarked">
         <h5 className="bookmark-title">
           <b>Bookmarked Blogs : {quantity}</b>

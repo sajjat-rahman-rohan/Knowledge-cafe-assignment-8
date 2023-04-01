@@ -8,7 +8,7 @@
 .sidebar-container {
   color: black;
 }
-div.saidebar-container .saidebar {
+.blogs-container .sidebar-container .sidebar {
   position: sticky;
   top: 80px;
 }

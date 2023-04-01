@@ -1,4 +1,4 @@
-.cart .total-min {
+.sidebar1 .total-min {
   font-family: "Exo 2";
   font-style: normal;
   font-weight: 700;
@@ -12,13 +12,13 @@
   margin-bottom: 20px;
 }
 
-.cart .bookmarked {
+.sidebar1 .bookmarked {
   background: rgba(17, 17, 17, 0.05);
   border-radius: 8px;
   padding: 22px;
 }
 
-.cart .bookmark-title {
+.sidebar1 .bookmark-title {
   font-family: "Exo 2";
   font-style: normal;
   font-weight: 700;
@@ -27,7 +27,7 @@
   color: #111111;
 }
 
-.cart .bookmark-blog {
+.sidebar1 .bookmark-blog {
   font-family: "Exo 2";
   font-style: normal;
   font-weight: 600;

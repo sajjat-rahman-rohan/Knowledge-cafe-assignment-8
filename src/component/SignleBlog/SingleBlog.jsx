@@ -14,7 +14,7 @@ const SingleBlog = (props) => {
     price,
   } = props.blog;
 
-  const handleAddTocart = props.handleAddTocart;
+  const handleAddToSpentTime = props.handleAddToSpentTime;
   const handleAddTocartMin = props.handleAddTocartMin;
 
   return (
@@ -36,7 +36,7 @@ const SingleBlog = (props) => {
             <span className="blog-min">#programming</span>
           </p>
           <button
-            onClick={() => handleAddTocart(readTime)}
+            onClick={() => handleAddToSpentTime(readTime)}
             className="blog-btn"
           >
             Mark as read
